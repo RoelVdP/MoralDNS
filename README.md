@@ -1,4 +1,4 @@
-# MoralDNS: Keep your surfing clean
+# MoralDNS
 MoralDNS is a Raspberry Pi + masqdns based DNS/DHCP server which filters many ad serving + immoral domains, but you can also use in on a single workstation. It works by updating the host file with a long list of unwanted/bad domains and redirecting them to the IP address 0.0.0.0. This also saves bandwith. It is recommended to set this up on a Raspberry Pi (or similar) and redirect all DNS traffic to that.
 
 To use it on a single workstation;
