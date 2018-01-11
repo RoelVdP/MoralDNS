@@ -12,3 +12,5 @@ To use it on a single workstation;
     <3x enter to confirm>
 
 To use it on a Raspberry Pi with masqdns based DNS/DHCP; just setup masqdns then do the above single workstation steps on the Raspberry Pi. This should (in a normal setup) cause masqdns to use the updated host file.
+
+MoralDNS currently blocks 150.000+ unique hosts
