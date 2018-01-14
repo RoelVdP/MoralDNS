@@ -67,6 +67,7 @@ echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmp
 echo "ff02::1 ip6-allnodes"   >> hosts.tmp
 echo "ff02::2 ip6-allrouters" >> hosts.tmp
 cat hosts.tmp2 >> hosts.tmp
+echo "0.0.0.0 adbank.network" >> hosts.tmp
 
 # Writeout
 echo "Press enter 3x to OVERWRITE the current hostfile (all current contents will be removed!) with the new version (containing approximately $(wc -l hosts.tmp) filtered hosts)"
