@@ -2,7 +2,7 @@
 # Various lists https://filterlists.com/ - below is an optimized list of lists
 
 add(){
-  echo "Adding $(wc -l tmp) hosts to the temporary hosts file"
+  echo "Adding $(wc -l tmp) hosts to the temporary hosts file..."
   echo "-------"
   cat tmp >> hosts.tmp
   rm -f tmp
@@ -60,7 +60,8 @@ rm -Rf BadHosts.msw h.zip
 add
 
 # Final cleanup (With thanks for CTRL+M example from; http://www.theunixschool.com/2011/03/different-ways-to-delete-m-character-in.html)
-grep -vE "0.0.0.0.*0.0.0.0|^[^0]|127.0.0.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl|www\.googleadservices\.com" hosts.tmp | tr -d "\015" | sort -u > hosts.tmp2
+echo "Processing final merge and cleanup - this may take some time..."
+grep -vE "0.0.0.0.*0.0.0.0|^[^0]|127.0.0.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl|\.googleadservices\.com" hosts.tmp | tr -d "\015" | sort -u > hosts.tmp2
 rm -f hosts.tmp
 echo "127.0.0.1 localhost dns" > hosts.tmp
 echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmp
