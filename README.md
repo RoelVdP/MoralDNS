@@ -17,6 +17,8 @@ In summary, you can use this script to simply generate a hosts file, and overwri
 
 Note that running the script on Windows may not be straightforward. If you use Windows a lot, the Raspberry Pi (running Raspbian for example) running DNS or DNS+DHCP would be a great way to setup your environment. A Raspberry Pi 2 is quite sufficient for a small to medium network size.
 
+Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host file) to the latest one. Often a few thousand hosts will have been added to the lists MoralDNS obtains from various providers. To see approximately how many hosts are blocked, execute:  wc -l /etc/hosts
+
 Enjoy an ad-free, immoral-free browsing experience! Great for families! And finally, you'll also see that various trackers, like for example clicktale.com, are blocked too!
 
 MoralDNS currently blocks 129.000+ unique hosts
