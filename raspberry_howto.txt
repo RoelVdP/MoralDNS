@@ -1,8 +1,8 @@
 # This file shows some of the commands you may need to setup your Raspberry Pi 2 or 3 
 # It is NOT meant to be run as a script, and all commands have been remarked with '#'
-# It is also not meant to be a complete guide in terms of security configuration, yet
-# it could definitely help get you up and running. It may be 'more then enough' for
-# smaller or home sized networks, but that's your own decision and liability offcourse
+# It is also not meant to be a complete guide in terms of security configuration. 
+# It may help get you up and running faster, and it may be 'more then enough' for
+# smaller or home sized networks, but that's your own decision & liability offcourse
 # ------------------------------------------------------------------------------------
 # ifconfig  # Find out IP of Raspberry
 # passwd    # Set secure password for user 'pi'
