@@ -1,0 +1,21 @@
+# This file shows some of the commands you may need to setup your Raspberry Pi 2 or 3 
+# It is NOT meant to be run as a script, and all commands have been remarked with '#'
+# It is also not meant to be a complete guide in terms of security configuration, yet
+# it could definitely help get you up and running. It may be 'more then enough' for
+# smaller or home sized networks, but that's your own decision and liability offcourse
+# ------------------------------------------------------------------------------------
+# ifconfig  # Find out IP of Raspberry
+# passwd    # Set secure password for user 'pi'
+# sudo passwd root  # Set secure password for 'root'
+# sudo apt-get install dnsmasq
+# sudo apt-get install update
+# sudo apt-get install upgrade
+# sudo apt-get update
+# sudo apt-get upgrade
+# sudo nano /etc/dhcpcd.conf 
+# sudo raspi-config
+# sudo reboot
+# sudo service dnsmasq restart
+# sudo vi /etc/dnsmasq.d/home.dns
+# ------------------------------------------------------------------------------------
+# Enjoy!
