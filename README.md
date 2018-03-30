@@ -13,8 +13,10 @@ To use it on a single workstation;
 
 To use it on a Raspberry Pi with masqdns based DNS/DHCP; just setup masqdns then do the above single workstation steps on the Raspberry Pi. This should (in a normal setup) cause masqdns to use the updated host file. Then point your workstations to the Raspberry Pi for DNS resolution. If you setup a DHCP on the Raspberry Pi as well, then do not forget to disable DHCP on your normal router - two DHCP servers on the same network is bound to cause IP address conflicts.
 
-In summary, you can use this script to just generate a hosts file and overwrite your current host file (note the overwrite warning) or take it one step further and install the (seperate) masqdns for central DNS resolution or DNS+DHCP resolution+server. Note that running the script on Windows may not be straightforward. If you use Windows a lot, the Raspberry Pi (running Raspbian for example) running DNS or DNS+DHCP would be the best way to setup your environment IMHO.
+In summary, you can use this script to simply generate a hosts file, and overwrite your current host file (note the overwrite warning). Or, take it one step further and install the (seperate) masqdns for central DNS resolution or DNS+DHCP resolution+server.
+
+Note that running the script on Windows may not be straightforward. If you use Windows a lot, the Raspberry Pi (running Raspbian for example) running DNS or DNS+DHCP would be a great way to setup your environment. A Raspberry Pi 2 is quite sufficient for a small to medium network size.
+
+Enjoy an ad-free, immoral-free browsing experience! Great for families! And finally, you'll also see that various trackers, like for example clicktale.com, are blocked too!
 
 MoralDNS currently blocks 129.000+ unique hosts
-
-Enjoy an ad-free, immoral-websites-free browsing experience! And finally, you'll also see that various trackers, like for example clicktale.com, are blocked too!
