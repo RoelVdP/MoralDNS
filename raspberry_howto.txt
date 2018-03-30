@@ -4,6 +4,8 @@
 # It may help get you up and running faster, and it may be 'more then enough' for
 # smaller or home sized networks, but that's your own decision & liability offcourse
 # ------------------------------------------------------------------------------------
+# For dnsmasq configuration, please see https://wiki.debian.org/HowTo/dnsmasq
+# ------------------------------------------------------------------------------------
 # ifconfig  # Find out IP of Raspberry
 # passwd    # Set secure password for user 'pi'
 # sudo passwd root  # Set secure password for 'root'
