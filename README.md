@@ -11,7 +11,7 @@ To use it on a single workstation;
     <Warning: your hostfile will be overwritten with new version>
     <3x enter to confirm>
 
-To use it on a Raspberry Pi with masqdns based DNS/DHCP; just setup masqdns then do the above single workstation steps on the Raspberry Pi. This should (in a normal setup) cause masqdns to use the updated host file. Then point your workstations to the Raspberry Pi for DNS resolution. If you setup a DHCP on the Raspberry Pi as well, then do not forget to disable DHCP on your normal router - two DHCP servers on the same network is bound to cause IP address conflicts.
+To use it on a Raspberry Pi with masqdns based DNS/DHCP; just setup masqdns (https://wiki.debian.org/HowTo/dnsmasq) then do the above single workstation steps on the Raspberry Pi. This should (in a normal setup) cause masqdns to use the updated host file. Then point your workstations to the Raspberry Pi for DNS resolution. If you setup a DHCP on the Raspberry Pi as well, then do not forget to disable DHCP on your normal router - two DHCP servers on the same network is bound to cause IP address conflicts.
 
 In summary, you can use this script to simply generate a hosts file, and overwrite your current host file (note the overwrite warning). Or, take it one step further and install the (seperate) masqdns for central DNS resolution or DNS+DHCP resolution+server.
 
