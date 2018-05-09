@@ -72,7 +72,7 @@ echo "0.0.0.0 adbank.network" >> hosts.tmp
 echo "0.0.0.0 googe.com" >> hosts.tmp
 
 # Writeout
-echo "Press enter 3x to OVERWRITE the current hostfile (all current contents will be removed!) with the new version (containing approximately $(wc -l hosts.tmp) filtered hosts)"
+echo "Press enter 3x to OVERWRITE the current hostfile (all current contents will be removed!) with the new version (containing approximately $(wc -l hosts.tmp | sed 's|[^0-9]||g') filtered hosts)"
 read -p "1x..."
 read -p "2x..."
 read -p "3x..."
