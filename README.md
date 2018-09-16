@@ -19,6 +19,6 @@ Note that running the script on Windows may not be straightforward. If you use W
 
 Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host file) to the latest one. Often a few thousand hosts will have been added to the lists MoralDNS obtains from various providers. To see approximately how many hosts are blocked, execute:  wc -l /etc/hosts
 
-Enjoy an almost completely ad and immoral website free browsing experience! Great for families! And finally, you'll also see that various trackers, like for example clicktale.com, are blocked too!
+Enjoy an almost completely ad and immoral websites free browsing experience! Great for families! And finally, you'll also see that various trackers, like for example clicktale.com, are blocked too!
 
 MoralDNS currently blocks nearly 140.000 unique hosts
