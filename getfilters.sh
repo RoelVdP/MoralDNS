@@ -61,7 +61,7 @@ add
 
 # Final cleanup (With thanks for CTRL+M example from; http://www.theunixschool.com/2011/03/different-ways-to-delete-m-character-in.html)
 echo "Processing final merge and cleanup - this may take some time..."
-grep -vE "0.0.0.0.*0.0.0.0|^[^0]|127.0.0.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl|\.googleadservices\.com" hosts.tmp | tr -d "\015" | sort -u > hosts.tmp2
+grep -vE "0.0.0.0.*0.0.0.0|^[^0]|127.0.0.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl|\.googleadservices\.com$|amazon-adsystem\.com$|trackcmp\.net$" hosts.tmp | tr -d "\015" | sort -u > hosts.tmp2
 rm -f hosts.tmp
 echo "127.0.0.1 localhost dns" > hosts.tmp
 echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmp
