@@ -1,5 +1,5 @@
 # MoralDNS
-MoralDNS is a masqdns based DNS/DHCP server which filters many ad serving + immoral domains. You can use it standalone/directly on a single workstation or set it up on Raspberry Pi (or similar) and then redirect all DNS traffic on your network to it. In general, it works by updating the host file with a long list of unwanted/bad domains, and redirecting them to the IP address 0.0.0.0. This also saves bandwith (webpages with ads on them will load and show without the ads).
+MoralDNS is a DNS/DHCP server (based on masqdns) which filters many ad serving + immoral domains. You can use it standalone/directly on a single workstation or set it up on Raspberry Pi (or similar) and then redirect all DNS traffic on your network to it. In general, it works by updating the host file with a long list of unwanted/bad domains, and redirecting them to the IP address 0.0.0.0. This also saves bandwith (webpages with ads on them will load and show without the ads).
 
 To use it on a single workstation;
 
