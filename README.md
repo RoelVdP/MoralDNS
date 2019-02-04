@@ -21,4 +21,4 @@ Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host fi
 
 Enjoy an almost completely ad and immoral websites free browsing experience! Great for families! And finally, you'll also see that various trackers, like for example clicktale.com, are blocked too!
 
-MoralDNS currently blocks nearly 145.000+ unique hosts
+MoralDNS currently blocks nearly 120.000+ unique hosts
