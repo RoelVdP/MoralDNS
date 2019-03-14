@@ -4,7 +4,8 @@
 add(){
   echo "Adding $(wc -l tmp) hosts to the temporary hosts file..."
   echo "-------"
-  cat tmp >> hosts.tmp
+  #cat tmp | tr -d "\015" | sed 's|[^0-9a-zA-Z-\.]||g'  >> hosts.tmp
+  cat tmp | sed 's|[^- 0-9a-zA-Z\.]||g' | sed 's|#.*$||' | sed 's|[ \t]\+$||' >> hosts.tmp
   rm -f tmp
 }
 
@@ -61,21 +62,19 @@ add
 
 # Final cleanup (With thanks for CTRL+M example from; http://www.theunixschool.com/2011/03/different-ways-to-delete-m-character-in.html)
 echo "Processing final merge and cleanup - this may take some time..."
-grep -vE "0.0.0.0.*0.0.0.0|^[^0]|127.0.0.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl$|\.googleadservices\.com$|amazon-adsystem\.com$|trackcmp\.net$|ad\.atdmt\.com$|alicdn\.com$|www\.googleadservices\.com$" hosts.tmp | tr -d "\015" | sort -u > hosts.tmp2
-rm -f hosts.tmp
-echo "127.0.0.1 localhost dns" > hosts.tmp
-echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmp
-echo "ff02::1 ip6-allnodes"   >> hosts.tmp
-echo "ff02::2 ip6-allrouters" >> hosts.tmp
-cat hosts.tmp2 >> hosts.tmp
-echo "0.0.0.0 adbank.network" >> hosts.tmp
-echo "0.0.0.0 googe.com" >> hosts.tmp
+echo "127.0.0.1 localhost dns" > hosts.tmp2
+echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmp2
+echo "ff02::1 ip6-allnodes"   >> hosts.tmp2
+echo "ff02::2 ip6-allrouters" >> hosts.tmp2
+grep -vE "0\.0\.0\.0\.*0\.0\.0\.0|^[^0]|^0[^\.]|127\.0\.0\.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl$|googleadservices\.com$|amazon-adsystem\.com$|trackcmp\.net$|ad\.atdmt\.com$|alicdn\.com$|\.cfjump\.com$" hosts.tmp | sort -u >> hosts.tmp2
+echo "0.0.0.0 adbank.network" >> hosts.tmp2
+echo "0.0.0.0 googe.com" >> hosts.tmp2
 
 # Writeout
-echo "Press enter 3x to OVERWRITE the current hostfile (all current contents will be removed!) with the new version (containing approximately $(wc -l hosts.tmp | sed 's|[^0-9]||g') filtered hosts)"
+echo "Press enter 3x to OVERWRITE the current hostfile (all current contents will be removed!) with the new version (containing approximately $(wc -l hosts.tmp2 | sed 's|[^0-9]||g') filtered hosts)"
 read -p "1x..."
 read -p "2x..."
 read -p "3x..."
 sudo rm -f /etc/hosts
-sudo mv hosts.tmp /etc/hosts
+sudo mv hosts.tmp2 /etc/hosts
 rm -f a b c d e f g h tmp hosts.tmp hosts.tmp2
