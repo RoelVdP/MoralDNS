@@ -4,7 +4,6 @@
 add(){
   echo "Adding $(wc -l tmp) hosts to the temporary hosts file..."
   echo "-------"
-  #cat tmp | tr -d "\015" | sed 's|[^0-9a-zA-Z-\.]||g'  >> hosts.tmp
   cat tmp | sed 's|[^- 0-9a-zA-Z\.]||g' | sed 's|#.*$||' | sed 's|[ \t]\+$||' >> hosts.tmp
   rm -f tmp
 }
