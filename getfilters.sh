@@ -65,7 +65,7 @@ echo "127.0.0.1 localhost dns" > hosts.tmp2
 echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmp2
 echo "ff02::1 ip6-allnodes"   >> hosts.tmp2
 echo "ff02::2 ip6-allrouters" >> hosts.tmp2
-grep -vE "0\.0\.0\.0\.*0\.0\.0\.0|^[^0]|^0[^\.]|127\.0\.0\.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl$|googleadservices\.com$|amazon-adsystem\.com$|trackcmp\.net$|ad\.atdmt\.com$|alicdn\.com$|\.cfjump\.com$" hosts.tmp | sort -u >> hosts.tmp2
+grep -vE "0\.0\.0\.0\.*0\.0\.0\.0|^[^0]|^0[^\.]|127\.0\.0\.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl$|googleadservices\.com$|amazon-adsystem\.com$|trackcmp\.net$|ad\.atdmt\.com$|alicdn\.com$|\.cfjump\.com$|r20\.rs6\.net$|app\.getresponse\.com$" hosts.tmp | sort -u >> hosts.tmp2
 echo "0.0.0.0 adbank.network" >> hosts.tmp2
 echo "0.0.0.0 googe.com" >> hosts.tmp2
 
