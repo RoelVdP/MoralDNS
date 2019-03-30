@@ -10,6 +10,10 @@ add(){
 
 # Init 
 rm -f a b c d e f g h i j k l m n o p q r s t u v w x y z aa ab ac ad ae af ag ah ai aj tmp hosts.tmp hosts.tmpb
+echo "*******************************************************************************************************************************************************************"
+echo "*** Warning: this script will automatically overwrite /etc/hosts using sudo. If you do not want this, press CTRL+C on your keyboard now. Sleeping 30 seconds... ***"
+echo "*******************************************************************************************************************************************************************"
+sleep 30
 
 # Original list of blocking domains and applicable license thereunto (compatible with GPLv2)
 # Note; I do not endorse pi-hole in any way, and would strongly advice against it's use for several reasons
@@ -148,6 +152,11 @@ wget -Oai "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
 grep -vE "^#|^$" ai | sed "s|^|0.0.0.0 |" > tmp
 add
 
+# With thanks, Malware domains list http://www.malwaredomains.com/?page_id=2
+wget -Oaj "http://mirror1.malwaredomains.com/files/domains.txt"
+grep -vE "^#|^$" aj | sed 's|[ \t]\+| |g;s|^ ||g;s| .*||;s|^|0.0.0.0 |' > tmp
+add
+
 # Final cleanup (With thanks for CTRL+M example from; http://www.theunixschool.com/2011/03/different-ways-to-delete-m-character-in.html)
 echo "Processing final merge and cleanup - this may take some time..."
 echo "127.0.0.1 localhost dns" > hosts.tmpb
@@ -155,14 +164,11 @@ echo "::1 localhost ip6-localhost ip6-loopback" >> hosts.tmpb
 echo "ff02::1 ip6-allnodes"   >> hosts.tmpb
 echo "ff02::2 ip6-allrouters" >> hosts.tmpb
 grep -vE "^0\.0\.0\.0$|^0\.0\.0\.0.*0\.0\.0\.0$|^[^0]|^0[^\.]|127\.0\.0\.1|localhost|ip6-loopback|ip6-allnodes|ip6-allrouters|::|goo\.gl$|googleadservices\.com$|amazon-adsystem\.com$|trackcmp\.net$|ad\.atdmt\.com$|alicdn\.com$|\.cfjump\.com$|r20\.rs6\.net$|app\.getresponse\.com$" hosts.tmp | sort -u >> hosts.tmpb
-echo "0.0.0.0 adbank.network" >> hosts.tmpb
-echo "0.0.0.0 googe.com" >> hosts.tmpb
 
-# Writeout
-echo "Press enter 3x to OVERWRITE the current hostfile (all current contents will be removed!) with the new version (containing approximately $(wc -l hosts.tmpb | sed 's|[^0-9]||g') filtered hosts)"
-read -p "1x..."
-read -p "2x..."
-read -p "3x..."
-sudo rm -f /etc/hosts
+# Automatic writeout (allows cron automation)
+echo "********************************************************************************************************************************************************************************************************"
+echo "*** Overwriting /etc/hosts with the newly created host file containing ~$(wc -l hosts.tmpb | sed 's|[^0-9]||g') filter hosts. Press CTRL+C if you do not want this to happen. Sleeping 30 seconds... ***"
+echo "********************************************************************************************************************************************************************************************************"
+sleep 30
 sudo cp hosts.tmpb /etc/hosts
 rm -f a b c d e f g h i j k l m n o p q r s t u v w x y z aa ab ac ad ae af ag ah ai aj tmp hosts.tmp hosts.tmpb
