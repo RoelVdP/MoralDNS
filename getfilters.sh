@@ -152,11 +152,6 @@ wget -Oai "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
 grep -vE "^#|^$" ai | sed "s|^|0.0.0.0 |" > tmp
 add
 
-# With thanks, Malware domains list http://www.malwaredomains.com/?page_id=2
-wget -Oaj "http://mirror1.malwaredomains.com/files/domains.txt"
-grep -vE "^#|^$" aj | sed 's|[ \t]\+| |g;s|^ ||g;s| .*||;s|^|0.0.0.0 |' > tmp
-add
-
 # Final cleanup (With thanks for CTRL+M example from; http://www.theunixschool.com/2011/03/different-ways-to-delete-m-character-in.html)
 echo "Processing final merge and cleanup - this may take some time..."
 echo "127.0.0.1 localhost dns" > hosts.tmpb
