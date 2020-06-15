@@ -23,4 +23,4 @@ Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host fi
 
 Enjoy an almost completely ad, tracking and immoral-websites free browsing experience! Great for families! 
 
-MoralDNS currently blocks 750000+ unique hosts. Enjoy!
+MoralDNS currently blocks 390000+ unique hosts. Enjoy!
