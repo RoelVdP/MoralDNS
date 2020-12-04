@@ -25,8 +25,8 @@ Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host fi
 
 You can also setup a 1AM cronjob, for example, by using:  sudo crontab -e  and adding the following:
 
-# m h  dom mon dow   command
-  0 1  *   *   *     /home/pi/MoralDNS/getfilters.sh
+    # m h  dom mon dow   command
+      0 1  *   *   *     /home/pi/MoralDNS/getfilters.sh
 
 Enjoy an almost completely ad, tracking and immoral-websites free browsing experience! Great for families! 
 
