@@ -21,7 +21,9 @@ In summary, you can use this script to simply generate a hosts file, and overwri
 
 Note that running the getfilters.sh script (Linux based) on Windows may not be straightforward. If you use Windows a lot, the Raspberry Pi (running Raspbian for example) running DNS or DNS+DHCP would be a great way to setup your environment. A Raspberry Pi 2 is quite sufficient for a small to medium network size.
 
-Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host file) to the latest one. Often a few thousand hosts will have been added to the lists MoralDNS obtains from various providers, or at times one of the providers will cleanup their list (or similar), and there will be a reduction in hosts filtered. To see approximately how many hosts are blocked, execute:  wc -l /etc/hosts
+Once in a while, re-run ./getfilters.sh to update your filter list (i.e. host file) to the latest one. Often a few thousand hosts will have been added to the lists MoralDNS obtains from various providers, or at times one of the providers will cleanup their list (or similar), and there will be a reduction in hosts filtered. 
+
+To see approximately how many hosts are blocked, execute:  wc -l /etc/hosts
 
 You can also setup a 1AM cronjob, for example, by using:  sudo crontab -e  and adding the following:
 
