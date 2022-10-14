@@ -13,7 +13,6 @@ To use it on a single workstation;
     cd MoralDNS
     ./getfilters.sh              # wait for downloads to finish
     <Warning: your hostfile will be overwritten with new version>
-    <3x enter to confirm>
 
 To use it on a Raspberry Pi (or similar) with dnsmasq based DNS/DHCP; just setup dnsmasq (https://wiki.debian.org/HowTo/dnsmasq) then do the above single workstation steps on the Raspberry Pi. This should (in a normal setup) cause dnsmasq to use the updated host file. Then point your workstations to the Raspberry Pi for DNS resolution. If you setup a DHCP on the Raspberry Pi as well, then do not forget to disable DHCP on your normal router - two DHCP servers on the same network is bound to cause IP address conflicts.
 
@@ -30,4 +29,4 @@ You can also setup a 1AM cronjob, for example, by using:  sudo crontab -e  and a
 
 Enjoy an almost completely ad, tracking and immoral-websites free browsing experience! Great for families! 
 
-MoralDNS currently blocks more then 665000 unique hosts. Enjoy!
+MoralDNS currently blocks more then 1.25 million unique hosts. Enjoy!
