@@ -5,12 +5,13 @@ You can use it standalone/directly on a single workstation (host file update onl
 
 Side note; Using 0.0.0.0 has been shown elsewhere to be superior to using 127.0.0.1 in terms of speed, and using 0.0.0.0 generates a smaller host file as well. It will nearly always work well, unless you have a (very old?) machine which does not support redirection to 0.0.0.0 (in that case simply edit the script to use 127.0.0.1 instead of 0.0.0.0). It will work fine on a Raspberri Pi setup (and likely on most modern operating systems).
 
-To use it on a single workstation;
+To use it on a single workstation (note: your /etc/hosts file will be overwritten);
 
     sudo apt-get install git      # or: sudo yum install git
     cd ~
     git clone https://github.com/RoelVdP/MoralDNS.git
     cd MoralDNS
+    sudo cp /etc/hosts /etc/hosts.backup
     ./getfilters.sh              # wait for downloads to finish
     <Warning: your hostfile will be overwritten with new version>
 
